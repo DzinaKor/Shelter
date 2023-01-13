@@ -1,0 +1,95 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 1280;
+    $pastWidth: 768;
+
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@function size_px($startSize, $minSize) {
+    $curWidth: 1280;
+    $pastWidth: 768;
+
+    @return calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+
+@media all and (max-width: 1281px) {
+
+    /*    @include size("font-size", 50, 10);        */
+    .page {
+        width: 100%;
+        /*@include size("width", 1280, 768);*/
+    }
+    .container {
+        @include size("width", 1200, calc(768 - 2*30) );
+    }
+    .header_container {
+        @include size("width", 1200, calc(768 - 2*30) );
+    }
+    @-moz-document url-prefix() {
+        .logo_title {
+            @include size("font-size", 28, 25);
+        }
+    }
+
+    .not_only_puppy {
+        @include size("width", 698, 569);
+        @include size("height", 728, 593);
+        background-position: right bottom;
+    }
+
+    .not_only_container {
+        @include size("width", 1200, calc(768 - 2*30) );
+        @include size("height", 728, 580);
+    }
+
+    .not_only_caption {
+        @include size("width", 310, 300);
+    }
+    @-moz-document url-prefix() {
+        .not_only_caption {
+            @include size("font-size", 38, 35);
+        }
+    }
+    .not_only_description {
+        @include size("width", 460, 300);
+        @include size("margin-top", 40, 30);
+        @include size("margin-bottom", 40, 30);
+    }
+
+    .about_container {
+        grid-template-columns: 1fr size_px(120, 20) 1fr;
+    }
+    .about_container {
+        @include size("height", 580, 620);
+    }
+    .about_text_container {
+        @include size("width", 430, 300);
+    }
+    .pets_list_conteiner {
+        @include size("width", calc(3*270 + 2*90), calc(3*140 + 2*10));
+        @include size("margin-left", 50, 20);
+        @include size("margin-right", 50, 20);
+    }
+
+    .help_icons_container {
+        @include size("width", 1040, 760);
+        @include size("height", 280, 270);
+    }
+    .help_content {
+        @include size("width", 165, 140);
+    }
+    .help_content h3 {
+        @include size("font-size", 20, 17);
+    }
+
+    .donation_content {
+        @include size("width", 915, 760);
+    }
+    .donation_img {
+        @include size("width", 505, 400);
+    }
+    .button_style_white {
+        @include size("width", 188, 148);
+    }
+}

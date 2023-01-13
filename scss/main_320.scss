@@ -1,0 +1,28 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 320;
+    $pastWidth: 200;
+    
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@media all and (max-width:     322px){
+
+    .page {
+        @include size("width", 318, 198);
+    }
+    .not_only_container {
+        @include size("width", 300, 180);
+        @include size("height", 673, 670);
+    }
+    .about_image {
+        @include size("width", 260, 180);
+    }
+
+    .about_text_container {
+        @include size("width", 300, 190);
+    }
+    //donation
+    .donation_content {
+        @include size("height", 540, 500);
+    }
+}

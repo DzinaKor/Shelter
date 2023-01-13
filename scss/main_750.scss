@@ -1,0 +1,54 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 750;
+    $pastWidth: 320;
+
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@function size750_px($startSize, $minSize) {
+    $curWidth: 750;
+    $pastWidth: 320;
+
+    @return calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+
+@media all and (max-width: 750px) {
+    .header {
+        height: 150px;
+    }
+    .header_container {
+        margin: 30px auto auto 10px;
+        height: 60px;
+        justify-content: left;
+    }
+    .navigation {
+        position: fixed;
+        top: 0px;
+        right: -400px;
+        width: 320px;
+    }
+    .navigation_vert {
+/*        right: 0px;   */
+    }
+    .pets_block {
+        grid-template-columns: 1fr size750_px(120, 80) 1fr;
+        grid-template-rows: 1fr 20px 55px;
+        grid-template-areas: "card card card" "... ... ..." "btn1 ... btn2";
+    }
+    .pets_list_conteiner {
+        grid-area: card;
+        width: calc(100% - 20px);
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: center;
+    }
+    .pets_button_left {
+        grid-area: btn1;
+        justify-self: right;
+    }
+    .pets_button_right {
+        grid-area: btn2;
+        justify-self: left;
+    }
+}

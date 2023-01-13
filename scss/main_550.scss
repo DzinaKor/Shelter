@@ -1,0 +1,179 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 550;
+    $pastWidth: 320;
+
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@function size550_px($startSize, $minSize) {
+    $curWidth: 550;
+    $pastWidth: 320;
+
+    @return calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@media all and (max-width: 550px) {
+    .not_only_container {
+        @include size("width", 400, 300);
+        height: 670px;
+        margin-top: 0px;	
+    }
+    .not_only_text_container {
+        width: 100%;
+        @include size("height", 340, 300);
+        justify-content: space-between;
+    }
+    .not_only_caption {
+        width: 200px;
+        height: 64px;
+        font-size: 25px;
+        text-align: center;
+        align-self: center;
+    }
+    .not_only_description {
+        margin-top: 42px;
+        margin-bottom: 42px;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: #CDCDCD;
+    }
+    .not_only_puppy {
+        margin-left: 40px;
+        @include size("width", 300, 260);
+        @include size("height", 310, 270);
+    }
+    .about_text_container > h2 {
+        font-size: 25px;
+        width: 280px;
+        height: 64px;
+        text-align: center;  
+    }
+    .not_only_description {
+        @include size("width", 400, 300);
+    }
+    .pets_content > h2 {
+        font-size: 25px;
+        width: 280px;
+        height: 64px;
+        margin: 42px auto;
+        text-align: center;
+    }
+    .help_text {
+        font-size: 25px;
+        width: 220px;
+        height: 64px;
+        text-align: center;
+        margin: 42px auto;
+    }
+    .help_icons_container {
+        grid-template-columns: 1fr 30px 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        row-gap: 30px;
+        height: 555px;
+    }
+    .help_content {
+        width: 130px;
+        height: 88px;
+    }
+    .help_content:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .help_content:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .help_content:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .help_content:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .help_content:nth-child(5) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .help_content:nth-child(6) {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .help_content:nth-child(7) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .help_content:nth-child(8) {
+        grid-column: 3;
+        grid-row: 4;
+    }
+
+    .help_content:nth-child(9) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .help_content h3 {
+        font-size: 15px;
+    }
+    .donation_content {
+        width: 100%;
+        @include size("height", 560, 540);
+        margin-top: 0px;
+        margin-bottom: 42px;
+    }
+    .donation_text_content {
+        @include size("width", 380, 300);
+        @include size("height", 282, 280);
+        align-items: center;
+    }
+    .donation_head {
+        width: 280px;
+        height: 64px;
+        font-size: 25px;
+        margin-top: 42px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .donation_text1 {
+        font-size: 15px;
+        letter-spacing: 0em;
+    }
+    .donation_card {
+
+    }
+    .donation_card_num {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        text-align: center;
+    }
+    .donation_text2 {
+        font-family: 'Arial';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #B2B2B2;
+        width: 280px;
+        height: 90px;
+        text-align: justify;
+    }
+    .donation_img {
+        @include size("width", 396, 260);
+        @include size("height", 230, 135);
+    }
+}
