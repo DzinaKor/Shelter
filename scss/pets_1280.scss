@@ -1,0 +1,40 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 1280;
+    $pastWidth: 768;
+    
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@media all and (max-width: 1281px){
+
+    .pets_page {
+        width: 100%;
+    }
+    .pets_header_container {
+        @include size("width", 1200, 730);
+    }
+
+    .pets_main {
+        width: 100%;
+/*        width: calc(100vw - 12px);*/
+/*        @include size("width", 1280, 768);        */
+        @include size("height", 1340, 1200);
+    }
+    .pets_friends_container {
+        @include size("width", 1200, 730);
+    }
+    .pets_list {
+        @include size("width", 270, 180);
+        @include size("height", 430, 360);
+    }
+    .pet_img {
+        width: 100%;
+    //    @include size("width", 268, 178);
+    //    @include size("height", 268, 178);
+    }
+
+    .pets_contact_content {
+        @include size("width", 1200, calc(708 - 2*34) );
+    }
+
+}

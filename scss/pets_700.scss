@@ -1,0 +1,39 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 700;
+    $pastWidth: 320;
+    
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@media all and (max-width:     700px){
+
+    .pets_contact_content {
+        width: 100%;
+        @include size("height", 840, 810);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		row-gap: 40px;
+        margin-top: 30px;
+    }
+    .pets_contact_content *:nth-child(7) {
+        @include size("height", 310, 270);
+    }
+    .contact_title1,
+    .contact_title2 {
+        @include size("width", 600, 260);
+        @include size("font-size", 30, 25);
+		text-align: center;
+        height: 64px;
+        margin: 0px;
+    }
+	.letter_icon,
+	.phone_icon {
+        @include size("width", 600, 240);
+    }
+    .pin_icon1 {
+        @include size("width", 640, 280);
+    }
+
+}

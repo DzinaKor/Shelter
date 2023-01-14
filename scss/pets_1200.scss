@@ -1,0 +1,34 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 1200;
+    $pastWidth: 768;
+    
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+@media all and (max-width:     1200px){
+
+    .pets_contact_content {
+        @include size("width", calc(1200 - 2*30 - 2*34), calc(708 - 2*34));
+        @include size("height", 660, 640);
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr auto;
+    }
+    .pets_contact_content *:nth-child(7) {
+        grid-column: 1 / 3;
+        grid-row: 4;
+        width: 100%;
+        @include size("height", 310, 270);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .contact_title1,
+    .contact_title2 {
+        @include size("width", 280, 278);
+        @include size("font-size", 35, 35);
+        height: 90px;
+        margin-bottom: 40px;
+    }
+}

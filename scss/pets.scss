@@ -1,0 +1,298 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.pets_page {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+//header
+.pets_header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.pets_header_container {
+    width: 1200px;
+}
+.pets_header_container h1 {
+    color: #545454;
+}
+.pets_header_container .logo_subtitle {
+    color: #292929;
+}
+.pets_header_container a {
+    color: #545454;
+}
+
+//Our friends
+.pets_main {
+    width: 1280px;
+    height: 1340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+}
+.pets_friends_container {
+    width: 1200px;
+    height: 100%;
+    margin-top: 35px;
+    margin-bottom: 55px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 180px 2fr 140px;
+}
+.pets_friends_container h3 {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: #545454;
+}
+.pets_friends_content {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.pets_friends_buttons {
+    grid-column: 2 / 4;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+//pets JS
+.pets_pet:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+.pets_pet:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+.pets_pet:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+.pets_pet:nth-child(4) {
+    grid-column: 4;
+    grid-row: 1;
+}
+.pets_pet:nth-child(5) {
+    grid-column: 1;
+    grid-row: 2;
+}
+.pets_pet:nth-child(6) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.pets_pet:nth-child(7) {
+    grid-column: 3;
+    grid-row: 2;
+}
+.pets_pet:nth-child(8) {
+    grid-column: 4;
+    grid-row: 2;
+}
+.pet_img {
+    width: 268px;
+    height: 268px;
+    background-image: url("../assets/images/about-pets.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.pet_text {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+//footer
+.pets_footer {
+    width: 1200px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pets_contact_content {
+    width: 1200px;
+    height: 310px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: 2fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.pets_contact_content *:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+.pets_contact_content *:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+.pets_contact_content *:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+.pets_contact_content *:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1;
+}
+.pets_contact_content *:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.pets_contact_content *:nth-child(6) {
+    grid-column: 2;
+    grid-row: 3;
+}
+.pets_contact_content *:nth-child(7) {
+    grid-column: 3;
+    grid-row: 1 / 4;
+}
+.pets_contact_content > div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.pets_contact_content a {
+    margin-left: 60px;
+}
+.pets_contact_content .pets_address {
+    margin-left: 40px;
+}
+.contact_title1 {
+    width: 284px;
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.contact_title2 {
+    width: 284px;
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.contact_email {
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    color: #F1CDB3;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    width: 300px;
+}
+
+.letter_icon {
+    min-height: 36px;
+    background-image: url(../assets/icons/icon-email.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 24 32;
+}
+
+.contact_phone {
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    color: #F1CDB3;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    width: 300px;
+}
+
+.phone_icon {
+    min-height: 36px;
+    background-image: url(../assets/icons/icon-phone.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 24 32;
+}
+
+.first_address {
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    color: #F1CDB3;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+}
+
+.second_address {
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    color: #F1CDB3;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+}
+
+.pin_icon1 {
+    min-height: 36px;
+    background-image: url(../assets/icons/icon-marker.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 24 32;
+    width: 300px;
+}
+
+.footer_pets_img_puppy {
+    width: 300px;
+    height: 100%;
+    background-image: url(../assets/images/footer-puppy.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.pet_contact_block3 {
+    height: 100%;
+}
