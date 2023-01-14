@@ -139,22 +139,5 @@
             "lice",
             "fleas"
         ]
-    },
-    {
-        "name": "Eichi",
-        "img": "../../assets/images/deichi.png",
-        "type": "Dog",
-        "breed": "Mix breed",
-        "description": "Cutie boy, Eichi, is two months old and he likes to play. Eichi has lots of energy. We think a cozy apartment with no kids will suit Deichi so much.",
-        "age": "2 months",
-        "inoculations": [
-            "none"
-        ],
-        "diseases": [
-            "none"
-        ],
-        "parasites": [
-            "none"
-        ]
     }
 ]
